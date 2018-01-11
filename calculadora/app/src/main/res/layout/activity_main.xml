@@ -15,7 +15,7 @@
         android:layout_height="142dp"
         android:background="@color/negrito"
         android:text="000"
-        android:textAlignment="textEnd"
+        android:gravity="end"
         android:textColor="@color/blanquito"
         android:textSize="40dp" />
 
@@ -34,7 +34,7 @@
                 android:id="@+id/botonNrightParentesis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(": />
+                android:text="(" />
 
             <Button
                 android:id="@+id/botonNplus"
