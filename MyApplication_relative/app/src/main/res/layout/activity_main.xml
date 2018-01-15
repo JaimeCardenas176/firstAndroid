@@ -184,6 +184,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:backgroundTint="#800080"
-        app:srcCompat="@drawable/ic_half_moon" />
+        app:srcCompat="@drawable/ic_half_moon"
+        />
 
 </RelativeLayout>
