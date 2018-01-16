@@ -5,15 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jaime.threads_filesrw.MainActivity">
-
+    tools:context="com.example.jaime.threads_filesrw.dashboard">
 
     <Button
         android:id="@+id/buttonEscribe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="crear archivo"
-        android:onClick="escribeArchivo"
+        android:onClick="leeArchivo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
