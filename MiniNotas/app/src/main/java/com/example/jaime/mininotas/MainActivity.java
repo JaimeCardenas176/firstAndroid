@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
                     openFileInput("text.txt")));
             String linea = null;
             while((linea = lector.readLine())!= null){
-                editTextCampo.setText(linea, TextView.BufferType.EDITABLE);
+                editTextCampo.setText(linea+"\n", TextView.BufferType.EDITABLE);
             }
             Toast.makeText(this,"leyendo del archivo", Toast.LENGTH_LONG);
-    } catch (FileNotFoundException e) {
+    } catch (FileNotFoundException | SecurityException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,11 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void guardar(View view) {
         BufferedWriter escritor = null;
+        String texto = editTextCampo.getText().toString();
         try{
             escritor = new BufferedWriter( new OutputStreamWriter(
                     openFileOutput("texto.txt", MODE_PRIVATE)));
 
-            escritor.write(editTextCampo.getText().toString());
+            escritor.write(texto);
             Toast.makeText(this,"escribiendo en el archivo", Toast.LENGTH_LONG);
         } catch (FileNotFoundException  | SecurityException e) {
             e.printStackTrace();
