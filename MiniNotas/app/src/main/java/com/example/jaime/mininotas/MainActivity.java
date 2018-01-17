@@ -25,15 +25,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         buttonGuardar =  findViewById(R.id.buttonGuardar);
         editTextCampo = findViewById(R.id.editTextCampo);
-        editTextCampo.getText();
 
         BufferedReader lector = null;
         try{
             lector = new BufferedReader( new InputStreamReader(
                     openFileInput("text.txt")));
-            String linea = null;
-            while((linea = lector.readLine())!= null){
-                editTextCampo.setText(linea+"\n", TextView.BufferType.EDITABLE);
+            //String linea = null;
+            String textoParcial;
+            StringBuilder textoCompleto = new StringBuilder();
+            while((textoParcial = lector.readLine())!= null){
+                //editTextCampo.setText(linea+"\n", TextView.BufferType.EDITABLE);
+                textoCompleto.append(textoParcial);
+                editTextCampo.setText(textoCompleto.toString());
             }
             Toast.makeText(this,"leyendo del archivo", Toast.LENGTH_LONG);
     } catch (FileNotFoundException | SecurityException e) {
